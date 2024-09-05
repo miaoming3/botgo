@@ -51,6 +51,7 @@ var eventParseFuncMap = map[dto.OPCode]map[dto.EventType]eventParseFunc{
 		dto.EventForumAuditResult:  forumAuditHandler,
 
 		dto.EventInteractionCreate: interactionHandler,
+<<<<<<< HEAD
 
 		dto.EventGroupATMessageCreate: groupAtMessageHandler,
 		dto.EventGroupMessageCreate:   groupMessageHandler,
@@ -65,6 +66,8 @@ var eventParseFuncMap = map[dto.OPCode]map[dto.EventType]eventParseFunc{
 		dto.EventFriendDel:     friendDelHandle,
 		dto.EventC2CMsgReject:  c2cMsgRejectHandle,
 		dto.EventC2CMsgReceive: c2cMsgReceiveHandle,
+=======
+>>>>>>> fbfd4112b279aa509a885d86af8b0678db55e765
 	},
 }
 
@@ -275,6 +278,7 @@ func interactionHandler(payload *dto.WSPayload, message []byte) error {
 	}
 	return nil
 }
+<<<<<<< HEAD
 
 func groupAtMessageHandler(payload *dto.WSPayload, message []byte) error {
 	data := &dto.WSGroupATMessageData{}
@@ -396,3 +400,5 @@ func c2cMsgReceiveHandle(payload *dto.WSPayload, message []byte) error {
 	}
 	return nil
 }
+=======
+>>>>>>> fbfd4112b279aa509a885d86af8b0678db55e765

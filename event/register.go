@@ -30,6 +30,7 @@ var DefaultHandlers struct {
 	Reply      ReplyEventHandler
 	ForumAudit ForumAuditEventHandler
 
+<<<<<<< HEAD
 	Interaction    InteractionEventHandler
 	GroupAtMessage GroupAtMessageEventHandler
 	GroupMessage   GroupMessageEventHandler
@@ -44,6 +45,9 @@ var DefaultHandlers struct {
 	FriendDel     FriendDelEventHandle
 	C2CMsgReject  C2CMsgRejectHandle
 	C2CMsgReceive C2CMsgReceiveHandle
+=======
+	Interaction InteractionEventHandler
+>>>>>>> fbfd4112b279aa509a885d86af8b0678db55e765
 }
 
 // ReadyHandler 可以处理 ws 的 ready 事件
@@ -107,6 +111,7 @@ type ForumAuditEventHandler func(event *dto.WSPayload, data *dto.WSForumAuditDat
 // InteractionEventHandler 互动事件 handler
 type InteractionEventHandler func(event *dto.WSPayload, data *dto.WSInteractionData) error
 
+<<<<<<< HEAD
 type GroupAtMessageEventHandler func(event *dto.WSPayload, data *dto.WSGroupATMessageData) error
 
 type GroupMessageEventHandler func(event *dto.WSPayload, data *dto.WSGroupMessageData) error
@@ -129,6 +134,8 @@ type C2CMsgRejectHandle func(event *dto.WSPayload, data *dto.WSFriendMsgRejectDa
 
 type C2CMsgReceiveHandle func(event *dto.WSPayload, data *dto.WSFriendMsgReveiceData) error
 
+=======
+>>>>>>> fbfd4112b279aa509a885d86af8b0678db55e765
 // RegisterHandlers 注册事件回调，并返回 intent 用于 websocket 的鉴权
 func RegisterHandlers(handlers ...interface{}) dto.Intent {
 	var i dto.Intent
@@ -149,6 +156,7 @@ func RegisterHandlers(handlers ...interface{}) dto.Intent {
 		case InteractionEventHandler:
 			DefaultHandlers.Interaction = handle
 			i = i | dto.EventToIntent(dto.EventInteractionCreate)
+<<<<<<< HEAD
 		case GroupAtMessageEventHandler:
 			DefaultHandlers.GroupAtMessage = handle
 			i = i | dto.EventToIntent(dto.EventGroupATMessageCreate)
@@ -182,6 +190,8 @@ func RegisterHandlers(handlers ...interface{}) dto.Intent {
 		case C2CMsgReceiveHandle:
 			DefaultHandlers.C2CMsgReceive = handle
 			i = i | dto.EventToIntent(dto.EventC2CMsgReceive)
+=======
+>>>>>>> fbfd4112b279aa509a885d86af8b0678db55e765
 		default:
 		}
 	}
