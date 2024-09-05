@@ -6,18 +6,13 @@ import (
 
 const domain = "api.sgroup.qq.com"
 const sandBoxDomain = "sandbox.api.sgroup.qq.com"
-<<<<<<< HEAD
 const getAppAccessTokenDomain = "https://bots.qq.com"
-=======
-
->>>>>>> fbfd4112b279aa509a885d86af8b0678db55e765
 const scheme = "https"
 
 type uri string
 
 // 目前提供的接口的 uri
 const (
-
 	getAppAccessTokenUri uri = "/app/getAppAccessToken"
 
 	privateMessageUri          uri = "/v2/users/{openid}/messages"
@@ -96,10 +91,8 @@ func (o *openAPI) getURL(endpoint uri) string {
 	}
 	return fmt.Sprintf("%s://%s%s", scheme, d, endpoint)
 }
-<<<<<<< HEAD
+
 func (o *openAPI) QQgetURL(endpoint uri) string {
 	d := getAppAccessTokenDomain
 	return fmt.Sprintf("%s://%s%s", scheme, d, endpoint)
 }
-=======
->>>>>>> fbfd4112b279aa509a885d86af8b0678db55e765
