@@ -1,9 +1,8 @@
 package botgo
 
 import (
+	"github.com/miaoming3/botgo/openapi"
 	"testing"
-
-	"github.com/tencent-connect/botgo/openapi"
 )
 
 func TestUseOpenAPIVersion(t *testing.T) {

@@ -3,7 +3,7 @@ package v1
 import (
 	"context"
 
-	"github.com/tencent-connect/botgo/dto"
+	"github.com/miaoming3/botgo/dto"
 )
 
 // GetAPIPermissions 获取频道可用权限列表

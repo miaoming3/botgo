@@ -6,11 +6,11 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/tencent-connect/botgo/dto"
-	"github.com/tencent-connect/botgo/event"
-	"github.com/tencent-connect/botgo/interaction/signature"
-	"github.com/tencent-connect/botgo/log"
-	"github.com/tencent-connect/botgo/openapi"
+	"github.com/miaoming3/botgo/dto"
+	"github.com/miaoming3/botgo/event"
+	"github.com/miaoming3/botgo/interaction/signature"
+	"github.com/miaoming3/botgo/log"
+	"github.com/miaoming3/botgo/openapi"
 )
 
 type ack struct {

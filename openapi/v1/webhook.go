@@ -4,7 +4,7 @@ import (
 	"context"
 	"encoding/json"
 
-	"github.com/tencent-connect/botgo/dto"
+	"github.com/miaoming3/botgo/dto"
 )
 
 // CreateSession 创建一个新的 http 事件回调

@@ -7,9 +7,9 @@ import (
 	"log"
 	"time"
 
-	"github.com/tencent-connect/botgo/dto"
-	"github.com/tencent-connect/botgo/dto/message"
-	"github.com/tencent-connect/botgo/openapi"
+	"github.com/miaoming3/botgo/dto"
+	"github.com/miaoming3/botgo/dto/message"
+	"github.com/miaoming3/botgo/openapi"
 )
 
 // Processor is a struct to process message

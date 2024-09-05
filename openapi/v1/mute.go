@@ -4,9 +4,9 @@ import (
 	"context"
 	"errors"
 
-	"github.com/tencent-connect/botgo/log"
+	"github.com/miaoming3/botgo/log"
 
-	"github.com/tencent-connect/botgo/dto"
+	"github.com/miaoming3/botgo/dto"
 )
 
 // GuildMute 频道禁言

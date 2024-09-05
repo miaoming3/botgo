@@ -4,8 +4,8 @@ import (
 	"context"
 	"encoding/json"
 
-	"github.com/tencent-connect/botgo/dto"
-	"github.com/tencent-connect/botgo/errs"
+	"github.com/miaoming3/botgo/dto"
+	"github.com/miaoming3/botgo/errs"
 )
 
 // MemberAddRole 添加成员角色

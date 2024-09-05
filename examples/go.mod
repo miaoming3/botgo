@@ -5,7 +5,7 @@ go 1.21.4
 require (
 	github.com/go-redis/redis/v8 v8.11.5
 	github.com/google/uuid v1.6.0
-	github.com/tencent-connect/botgo v0.1.6
+	github.com/miaoming3/botgo v0.1.6
 	go.uber.org/zap v1.19.1
 	gopkg.in/yaml.v2 v2.4.0
 )
@@ -24,4 +24,4 @@ require (
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
 
-replace github.com/tencent-connect/botgo => ../
+replace github.com/miaoming3/botgo => ../

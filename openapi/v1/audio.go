@@ -2,9 +2,9 @@ package v1
 
 import (
 	"context"
-	"github.com/tencent-connect/botgo/log"
+	"github.com/miaoming3/botgo/log"
 
-	"github.com/tencent-connect/botgo/dto"
+	"github.com/miaoming3/botgo/dto"
 )
 
 // PostAudio AudioAPI 接口实现

@@ -3,7 +3,7 @@ package apitest
 import (
 	"testing"
 
-	"github.com/tencent-connect/botgo/dto"
+	"github.com/miaoming3/botgo/dto"
 )
 
 func TestChannel(t *testing.T) {

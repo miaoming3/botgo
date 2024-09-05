@@ -9,10 +9,10 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/tencent-connect/botgo/dto"
-	"github.com/tencent-connect/botgo/event"
-	"github.com/tencent-connect/botgo/interaction/signature"
-	"github.com/tencent-connect/botgo/interaction/webhook"
+	"github.com/miaoming3/botgo/dto"
+	"github.com/miaoming3/botgo/event"
+	"github.com/miaoming3/botgo/interaction/signature"
+	"github.com/miaoming3/botgo/interaction/webhook"
 )
 
 var handler event.PlainEventHandler = func(payload *dto.WSPayload, message []byte) error {

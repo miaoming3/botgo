@@ -10,11 +10,11 @@ import (
 	"time"
 
 	wss "github.com/gorilla/websocket" // 是一个流行的 websocket 客户端，服务端实现
-	"github.com/tencent-connect/botgo/dto"
-	"github.com/tencent-connect/botgo/errs"
-	"github.com/tencent-connect/botgo/event"
-	"github.com/tencent-connect/botgo/log"
-	"github.com/tencent-connect/botgo/websocket"
+	"github.com/miaoming3/botgo/dto"
+	"github.com/miaoming3/botgo/errs"
+	"github.com/miaoming3/botgo/event"
+	"github.com/miaoming3/botgo/log"
+	"github.com/miaoming3/botgo/websocket"
 )
 
 // DefaultQueueSize 监听队列的缓冲长度
