@@ -107,3 +107,24 @@ type WSForumAuditData ForumAuditResult
 
 // WSInteractionData 互动事件
 type WSInteractionData Interaction
+
+type WSC2CMessageData C2CMessage
+
+type WSGroupATMessageData GroupMessage
+
+type WSGroupMessageData GroupMessage
+type WSGroupAddRobotData GroupAddRobotEvent
+
+type WSGroupDelRobotData GroupDelRobotEvent
+
+type WSGroupMsgRejectData GroupMsgRejectEvent
+
+type WSGroupMsgReceiveData GroupMsgReceiveEvent
+
+type WSFriendAddData FriendAddEvent
+
+type WSFriendDelData FriendDelEvent
+
+type WSFriendMsgRejectData FriendMsgRejectEvent
+
+type WSFriendMsgReveiceData FriendMsgReceiveEvent

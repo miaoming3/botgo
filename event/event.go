@@ -51,6 +51,20 @@ var eventParseFuncMap = map[dto.OPCode]map[dto.EventType]eventParseFunc{
 		dto.EventForumAuditResult:  forumAuditHandler,
 
 		dto.EventInteractionCreate: interactionHandler,
+
+		dto.EventGroupATMessageCreate: groupAtMessageHandler,
+		dto.EventGroupMessageCreate:   groupMessageHandler,
+		dto.EventC2CMessageCreate:     c2cMessageHandle,
+
+		dto.EventGroupAddRobbot:  groupAddRobotHandle,
+		dto.EventGroupDelRobbot:  groupDelRobotHandle,
+		dto.EventGroupMsgReject:  groupMsgRejectHandle,
+		dto.EventGroupMsgReceive: groupMsgReceiveHandle,
+
+		dto.EventFriendAdd:     friendAddHandle,
+		dto.EventFriendDel:     friendDelHandle,
+		dto.EventC2CMsgReject:  c2cMsgRejectHandle,
+		dto.EventC2CMsgReceive: c2cMsgReceiveHandle,
 	},
 }
 
@@ -258,6 +272,127 @@ func interactionHandler(payload *dto.WSPayload, message []byte) error {
 	}
 	if DefaultHandlers.Interaction != nil {
 		return DefaultHandlers.Interaction(payload, data)
+	}
+	return nil
+}
+
+func groupAtMessageHandler(payload *dto.WSPayload, message []byte) error {
+	data := &dto.WSGroupATMessageData{}
+	if err := ParseData(message, data); err != nil {
+		return err
+	}
+	if DefaultHandlers.GroupAtMessage != nil {
+		return DefaultHandlers.GroupAtMessage(payload, data)
+	}
+	return nil
+}
+
+func groupMessageHandler(payload *dto.WSPayload, message []byte) error {
+	data := &dto.WSGroupMessageData{}
+	if err := ParseData(message, data); err != nil {
+		return err
+	}
+	if DefaultHandlers.GroupMessage != nil {
+		return DefaultHandlers.GroupMessage(payload, data)
+	}
+	return nil
+}
+
+func c2cMessageHandle(payload *dto.WSPayload, message []byte) error {
+	data := &dto.WSC2CMessageData{}
+	if err := ParseData(message, data); err != nil {
+		return err
+	}
+	if DefaultHandlers.C2CMessage != nil {
+		return DefaultHandlers.C2CMessage(payload, data)
+	}
+	return nil
+}
+
+func groupAddRobotHandle(payload *dto.WSPayload, message []byte) error {
+	data := &dto.WSGroupAddRobotData{}
+	if err := ParseData(message, data); err != nil {
+		return err
+	}
+	if DefaultHandlers.GroupAddRobot != nil {
+		return DefaultHandlers.GroupAddRobot(payload, data)
+	}
+	return nil
+}
+
+func groupDelRobotHandle(payload *dto.WSPayload, message []byte) error {
+	data := &dto.WSGroupDelRobotData{}
+	if err := ParseData(message, data); err != nil {
+		return err
+	}
+	if DefaultHandlers.GroupDelRobot != nil {
+		return DefaultHandlers.GroupDelRobot(payload, data)
+	}
+	return nil
+}
+
+func groupMsgRejectHandle(payload *dto.WSPayload, message []byte) error {
+	data := &dto.WSGroupMsgRejectData{}
+	if err := ParseData(message, data); err != nil {
+		return err
+	}
+	if DefaultHandlers.GroupMsgReject != nil {
+		return DefaultHandlers.GroupMsgReject(payload, data)
+	}
+	return nil
+}
+
+func groupMsgReceiveHandle(payload *dto.WSPayload, message []byte) error {
+	data := &dto.WSGroupMsgReceiveData{}
+	if err := ParseData(message, data); err != nil {
+		return err
+	}
+	if DefaultHandlers.GroupMsgReceive != nil {
+		return DefaultHandlers.GroupMsgReceive(payload, data)
+	}
+	return nil
+}
+
+func friendAddHandle(payload *dto.WSPayload, message []byte) error {
+	data := &dto.WSFriendAddData{}
+	if err := ParseData(message, data); err != nil {
+		return err
+	}
+	if DefaultHandlers.FriendAdd != nil {
+		return DefaultHandlers.FriendAdd(payload, data)
+	}
+	return nil
+}
+
+func friendDelHandle(payload *dto.WSPayload, message []byte) error {
+	data := &dto.WSFriendDelData{}
+	if err := ParseData(message, data); err != nil {
+		return err
+	}
+	if DefaultHandlers.FriendDel != nil {
+		return DefaultHandlers.FriendDel(payload, data)
+	}
+	return nil
+}
+
+func c2cMsgRejectHandle(payload *dto.WSPayload, message []byte) error {
+	data := &dto.WSFriendMsgRejectData{}
+	if err := ParseData(message, data); err != nil {
+		return err
+	}
+	if DefaultHandlers.C2CMsgReject != nil {
+		return DefaultHandlers.C2CMsgReject(payload, data)
+	}
+	return nil
+}
+
+func c2cMsgReceiveHandle(payload *dto.WSPayload, message []byte) error {
+	data := &dto.WSFriendMsgReveiceData{}
+	if err := ParseData(message, data); err != nil {
+		return err
+	}
+	if DefaultHandlers.C2CMsgReceive != nil {
+		return DefaultHandlers.C2CMsgReceive(payload, data)
 	}
 	return nil
 }

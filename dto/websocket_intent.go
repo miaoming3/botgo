@@ -42,7 +42,7 @@ const (
 	IntentDirectMessages
 	IntentDirectMessageReactions
 	IntentDirectMessageTyping
-
+	IntentQQ          Intent = 1 << 25
 	IntentInteraction Intent = 1 << 26 // 互动事件
 	IntentAudit       Intent = 1 << 27 // 审核事件
 	// IntentForum 论坛事件

@@ -119,3 +119,55 @@ func (o *openAPI) PostSettingGuide(ctx context.Context,
 	}
 	return resp.Result().(*dto.Message), nil
 }
+
+func (o *openAPI) PostGroupMessage(ctx context.Context, groupID string, msg *dto.GroupMessageToCreate) (*dto.GroupMsgResp, error) {
+	resp, err := o.request(ctx).
+		SetResult(dto.GroupMsgResp{}).
+		SetPathParam("group_openid", groupID).
+		SetBody(msg).
+		Post(o.getURL(groupMessageUri))
+	if err != nil {
+		return nil, err
+	}
+
+	return resp.Result().(*dto.GroupMsgResp), nil
+}
+
+func (o *openAPI) PostC2CMessage(ctx context.Context, userId string, msg *dto.C2CMessageToCreate) (*dto.C2CMsgResp, error) {
+	resp, err := o.request(ctx).
+		SetResult(dto.C2CMsgResp{}).
+		SetPathParam("openid", userId).
+		SetBody(msg).
+		Post(o.getURL(privateMessageUri))
+	if err != nil {
+		return nil, err
+	}
+
+	return resp.Result().(*dto.C2CMsgResp), nil
+}
+
+func (o *openAPI) PostC2CRichMediaMessage(ctx context.Context, userId string, msg *dto.C2CRichMediaMessageToCreate) (*dto.RichMediaMsgResp, error) {
+	resp, err := o.request(ctx).
+		SetResult(dto.RichMediaMsgResp{}).
+		SetPathParam("openid", userId).
+		SetBody(msg).
+		Post(o.getURL(privateRichMediaMessageUri))
+	if err != nil {
+		return nil, err
+	}
+
+	return resp.Result().(*dto.RichMediaMsgResp), nil
+}
+
+func (o *openAPI) PostGroupRichMediaMessage(ctx context.Context, groupID string, msg *dto.GroupRichMediaMessageToCreate) (*dto.RichMediaMsgResp, error) {
+	resp, err := o.request(ctx).
+		SetResult(dto.RichMediaMsgResp{}).
+		SetPathParam("group_openid", groupID).
+		SetBody(msg).
+		Post(o.getURL(groupRichMediaMessageUri))
+	if err != nil {
+		return nil, err
+	}
+
+	return resp.Result().(*dto.RichMediaMsgResp), nil
+}
