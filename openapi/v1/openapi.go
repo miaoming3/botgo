@@ -34,6 +34,7 @@ type openAPI struct {
 // Setup 注册
 func Setup() {
 	openapi.Register(openapi.APIv1, &openAPI{})
+
 }
 
 // Version 创建当前版本
