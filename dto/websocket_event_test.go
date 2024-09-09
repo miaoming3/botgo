@@ -12,5 +12,6 @@ func Test_transposeIntentEventMap(t *testing.T) {
 		assert.Equal(t, re[EventAudioFinish], IntentAudio)
 		assert.Equal(t, re[EventAudioOffMic], IntentAudio)
 		assert.Equal(t, re[EventChannelCreate], IntentGuilds)
+		assert.Equal(t, re[EventGroupMessageCreate], IntentQQ)
 	})
 }

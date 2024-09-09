@@ -261,6 +261,10 @@ func registerMessageHandlers(i dto.Intent, handlers ...interface{}) dto.Intent {
 		case MessageAuditEventHandler:
 			DefaultHandlers.MessageAudit = handle
 			i = i | dto.EventToIntent(dto.EventMessageAuditPass, dto.EventMessageAuditReject)
+		case GroupAtMessageEventHandler:
+			i = i | dto.EventToIntent(dto.EventGroupATMessageCreate)
+		case GroupMessageEventHandler:
+			i = i | dto.EventToIntent(dto.EventGroupMessageCreate)
 		default:
 		}
 	}

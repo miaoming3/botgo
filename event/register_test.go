@@ -18,14 +18,18 @@ func TestRegisterHandlers(t *testing.T) {
 	var audio AudioEventHandler = func(event *dto.WSPayload, data *dto.WSAudioData) error {
 		return nil
 	}
+	var groupMessage GroupMessageEventHandler = func(event *dto.WSPayload, data *dto.WSGroupMessageData) error {
+		return nil
+	}
 
 	t.Run(
 		"test intent", func(t *testing.T) {
-			i := RegisterHandlers(guild, message, audio)
+			i := RegisterHandlers(guild, message, audio, groupMessage)
 			fmt.Println(i)
 			assert.Equal(t, dto.IntentGuildMessages, i&dto.IntentGuildMessages)
 			assert.Equal(t, dto.IntentGuilds, i&dto.IntentGuilds)
 			assert.Equal(t, dto.IntentAudio, i&dto.IntentAudio)
+			assert.Equal(t, dto.IntentQQ, i&dto.IntentQQ)
 		},
 	)
 }
